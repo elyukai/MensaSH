@@ -1,13 +1,13 @@
 //
-//  MensaUITestsLaunchTests.swift
-//  MensaUITests
+//  MensaSHUITestsLaunchTests.swift
+//  MensaSHUITests
 //
 //  Created by Lukas Obermann on 17.11.24.
 //
 
 import XCTest
 
-final class MensaUITestsLaunchTests: XCTestCase {
+final class MensaSHUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

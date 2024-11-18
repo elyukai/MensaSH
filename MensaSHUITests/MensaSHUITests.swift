@@ -1,13 +1,13 @@
 //
-//  MensaUITests.swift
-//  MensaUITests
+//  MensaSHUITests.swift
+//  MensaSHUITests
 //
 //  Created by Lukas Obermann on 17.11.24.
 //
 
 import XCTest
 
-final class MensaUITests: XCTestCase {
+final class MensaSHUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

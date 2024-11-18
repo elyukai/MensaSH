@@ -1,6 +1,6 @@
 //
 //  Item.swift
-//  Mensa
+//  MensaSH
 //
 //  Created by Lukas Obermann on 17.11.24.
 //
