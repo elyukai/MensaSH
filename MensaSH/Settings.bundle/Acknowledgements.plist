@@ -11,6 +11,12 @@
 		<dict>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
+			<key>FooterText</key>
+			<string>StudentenwerkSchleswigHolstein</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
 			<key>Title</key>
 			<string>SwiftSoup</string>
 			<key>FooterText</key>
