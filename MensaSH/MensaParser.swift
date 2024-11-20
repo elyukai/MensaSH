@@ -111,7 +111,12 @@ actor MensaParser {
         let abbreviations = try document.select(".mensablock_filterelemente_block .filterbutton").compactMap { button -> (String, Ingredient)? in
             let abbreviation = try button.attr("data-wert")
             guard let kind = Ingredient.Kind(rawValue: try button.attr("data-typ")) else { return nil }
-            let exclude = (try? button.attr("data-ex")).map { $0 == "1" } ?? true
+            let exclude = switch try button.attr("data-ex") {
+            case "0": false
+            case "", "1": true
+            default:
+                false
+            }
             let name = try button.children().first(where: { content in try content.tagName() == "span" && content.classNames().isEmpty })?.text() ?? abbreviation
             return (abbreviation, Ingredient(abbreviation: abbreviation, name: name, kind: kind, exclude: exclude))
         }
