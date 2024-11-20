@@ -35,7 +35,14 @@ struct MenuOfTheDay: Identifiable, Hashable {
         }
         
         func contains(_ ingredient: Ingredient) -> Bool {
-            allergens.contains { $0 == ingredient.abbreviation } || additives.contains { $0 == ingredient.abbreviation } || types.contains { $0 == ingredient.abbreviation }
+            switch ingredient.kind {
+            case .allergen:
+                allergens.contains { $0 == ingredient.abbreviation }
+            case .additive:
+                additives.contains { $0 == ingredient.abbreviation }
+            case .preference:
+                types.contains { $0 == ingredient.abbreviation }
+            }
         }
         
         struct NamePart: Hashable {

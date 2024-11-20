@@ -113,6 +113,22 @@
         }
       }
     },
+    "Canteens" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mensen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Canteens"
+          }
+        }
+      }
+    },
     "Close" : {
       "localizations" : {
         "de" : {
@@ -157,22 +173,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Day"
-          }
-        }
-      }
-    },
-    "Earlier Week" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Frühere Woche"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Earlier Week"
           }
         }
       }
@@ -317,22 +317,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Loading…"
-          }
-        }
-      }
-    },
-    "Location" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ort"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Location"
           }
         }
       }
@@ -497,6 +481,22 @@
         }
       }
     },
+    "No location selected" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keine Mensa ausgewählt"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No location selected"
+          }
+        }
+      }
+    },
     "No menu item matches your filters" : {
       "localizations" : {
         "de" : {
@@ -509,6 +509,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "No menu item matches your filters"
+          }
+        }
+      }
+    },
+    "No menu item selected" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kein Menüeintrag ausgewählt"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No menu item selected"
           }
         }
       }

@@ -106,9 +106,9 @@ actor MensaParser {
         return dict
     }
     
-    func readAbbreviations(language: Language) async throws -> [String: Ingredient] {
+    func readIngredients(language: Language) async throws -> [String: Ingredient] {
         let document = try await requestHTMLDocument(for: .flensburg(.mensa), inWeek: .current, language: language)
-        let abbreviations = try document.select(".mensablock_filterelemente_block .filterbutton").compactMap { button -> (String, Ingredient)? in
+        let ingredients = try document.select(".mensablock_filterelemente_block .filterbutton").compactMap { button -> (String, Ingredient)? in
             let abbreviation = try button.attr("data-wert")
             guard let kind = Ingredient.Kind(rawValue: try button.attr("data-typ")) else { return nil }
             let exclude = switch try button.attr("data-ex") {
@@ -120,6 +120,6 @@ actor MensaParser {
             let name = try button.children().first(where: { content in try content.tagName() == "span" && content.classNames().isEmpty })?.text() ?? abbreviation
             return (abbreviation, Ingredient(abbreviation: abbreviation, name: name, kind: kind, exclude: exclude))
         }
-        return Dictionary(uniqueKeysWithValues: abbreviations)
+        return Dictionary(uniqueKeysWithValues: ingredients)
     }
 }

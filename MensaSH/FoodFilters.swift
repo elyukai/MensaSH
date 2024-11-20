@@ -25,26 +25,34 @@ struct FoodFilters: View {
     
     var body: some View {
         List {
-            Section("Without allergens") {
-                ForEach(allergens) { allergen in
-                    Toggle(isOn: createBinding(for: allergen)) {
-                        LabeledContent(allergen.name, value: allergen.abbreviation)
+            if !ingredients.isEmpty {
+                Section("Without allergens") {
+                    ForEach(allergens) { allergen in
+                        Toggle(isOn: createBinding(for: allergen)) {
+                            LabeledContent(allergen.name) {
+                                Text(allergen.abbreviation)
+                                    .foregroundStyle(.secondary)
+                            }
+                        }
                     }
                 }
-            }
-            
-            Section("Without additives") {
-                ForEach(additives) { additive in
-                    Toggle(isOn: createBinding(for: additive)) {
-                        LabeledContent(additive.name, value: additive.abbreviation)
+                
+                Section("Without additives") {
+                    ForEach(additives) { additive in
+                        Toggle(isOn: createBinding(for: additive)) {
+                            LabeledContent(additive.name) {
+                                Text(additive.abbreviation)
+                                    .foregroundStyle(.secondary)
+                            }
+                        }
                     }
                 }
-            }
-            
-            Section("Preferences") {
-                ForEach(preferences) { preference in
-                    Toggle(isOn: createBinding(for: preference)) {
-                        Text(preference.name)
+                
+                Section("Preferences") {
+                    ForEach(preferences) { preference in
+                        Toggle(isOn: createBinding(for: preference)) {
+                            Text(preference.name)
+                        }
                     }
                 }
             }
@@ -54,6 +62,14 @@ struct FoodFilters: View {
             ToolbarItem(placement: .destructiveAction) {
                 Button("Reset") {
                     filters = []
+                }
+                .disabled(filters.isEmpty)
+            }
+        }
+        .overlay {
+            if ingredients.isEmpty {
+                ContentUnavailableView {
+                    ProgressView("Loading…")
                 }
             }
         }
@@ -76,6 +92,13 @@ struct FoodFilters: View {
                 }
             }
         )
+    }
+    
+    static func selectedDescription(of filters: Set<String>, ingredients: [String: Ingredient]) -> String {
+        filters
+            .map { ingredients[$0]?.name ?? $0 }
+            .sorted(by: { $0.localizedStandardCompare($1) == .orderedAscending })
+            .joined(separator: ", ")
     }
 }
 

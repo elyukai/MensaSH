@@ -22,11 +22,19 @@ struct MensaSHApp: App {
 //            fatalError("Could not create ModelContainer: \(error)")
 //        }
 //    }()
+    @State private var menusByLocation: [Location: (current: [MenuOfTheDay], next: [MenuOfTheDay])] = [:]
+    @State private var ingredients: [String: Ingredient] = [:]
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(menusByLocation: $menusByLocation, ingredients: $ingredients)
         }
+
+#if os(macOS)
+        UtilityWindow("Filters", id: "filters") {
+            FoodFilters(ingredients: ingredients)
+        }
+#endif
 //        .modelContainer(sharedModelContainer)
     }
 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MenuItemDetails: View {
     var menuItem: MenuOfTheDay.MenuItem
-    var abbreviations: [String: Ingredient]
+    @Binding var ingredients: [String: Ingredient]
     
     var body: some View {
         List {
@@ -17,7 +17,7 @@ struct MenuItemDetails: View {
             LabeledContent("Day") {
                 Text(menuItem.date, format: .dateTime.year().month().day().weekday())
             }
-            LabeledContent("Types", value: menuItem.types.isEmpty ? "—" : menuItem.types.map { abbreviations[$0]?.name ?? $0 }.joined(separator: ", "))
+            LabeledContent("Types", value: menuItem.types.isEmpty ? "—" : menuItem.types.map { ingredients[$0]?.name ?? $0 }.joined(separator: ", "))
             
             if !menuItem.prices.isEmpty {
                 Section("Price") {
@@ -41,8 +41,8 @@ struct MenuItemDetails: View {
                 }
             }
             
-            MenuItemAbbreviationList(label: "Allergens", list: menuItem.allergens, abbreviations: abbreviations)
-            MenuItemAbbreviationList(label: "Additives", list: menuItem.additives, abbreviations: abbreviations)
+            MenuItemAbbreviationList(label: "Allergens", list: menuItem.allergens, abbreviations: ingredients)
+            MenuItemAbbreviationList(label: "Additives", list: menuItem.additives, abbreviations: ingredients)
         }
         .toolbarTitleDisplayMode(.inline)
     }
@@ -50,6 +50,6 @@ struct MenuItemDetails: View {
 
 #Preview {
     NavigationStack {
-        MenuItemDetails(menuItem: .init(date: .now, name: [.init(name: "Tortellini", additions: nil), .init(name: "mit Rucola", additions: nil)], allergens: [], additives: [], types: [], prices: [2.5, 3.75, 5.15]), abbreviations: [:])
+        MenuItemDetails(menuItem: .init(date: .now, name: [.init(name: "Tortellini", additions: nil), .init(name: "mit Rucola", additions: nil)], allergens: [], additives: [], types: [], prices: [2.5, 3.75, 5.15]), ingredients: .constant([:]))
     }
 }
