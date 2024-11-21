@@ -58,25 +58,32 @@ actor MensaParser {
         try element.attr(name).split(separator: "|").map { String($0) }
     }
     
+    private func extractMenuItems(from element: Element, for date: Date) throws -> [MenuOfTheDay.MenuItem] {
+        try element.select(".mensa_menu_detail").map { menuElement in
+            let nameParts = try extractMenuItemNameParts(from: menuElement)
+            let allergens = try extractDataSet("data-allergene", from: menuElement)
+            let additives = try extractDataSet("data-zusatzstoffe", from: menuElement)
+            let types = try extractDataSet("data-arten", from: menuElement)
+            
+            let prices = try menuElement.select(".menu_preis").first()!.children().filter { $0.tagName() == "span" }.map { try Decimal(try $0.text(), format: .currency(code: "EUR")) }
+            
+            return MenuOfTheDay.MenuItem(date: date, name: nameParts, allergens: allergens, additives: additives, types: types, prices: prices)
+        }
+    }
+    
+    private func extractAnnouncements(from element: Element) throws -> [String] {
+        try element.select(".mensa_tagesinfo .mensa_tagesinfo_content").map { announcementElement in
+            announcementElement.textNodes().map { $0.text().trimmingCharacters(in: .whitespaces) }.joined(separator: " ")
+        }
+    }
+    
     private func extractMenu(from document: Document) throws -> [MenuOfTheDay] {
         let timeZone = TimeZone(identifier: "Europe/Berlin")!
         return try document.select(".mensatag > .tag_headline").compactMap { dayElement in
             let (_, yearStr, monthStr, dayStr) = try /(\d{4})-(\d{2})-(\d{2})/.wholeMatch(in: try dayElement.attr("data-day"))!.output
             let date = DateComponents(calendar: .current, timeZone: timeZone, year: Int(yearStr), month: Int(monthStr), day: Int(dayStr), hour: 0, minute: 0, second: 0).date!
-            let menu = try dayElement.select(".mensa_menu_detail").map { menuElement in
-                let nameParts = try extractMenuItemNameParts(from: menuElement)
-                let allergens = try extractDataSet("data-allergene", from: menuElement)
-                let additives = try extractDataSet("data-zusatzstoffe", from: menuElement)
-                let types = try extractDataSet("data-arten", from: menuElement)
-                
-                let prices = try menuElement.select(".menu_preis").first()!.children().filter { $0.tagName() == "span" }.map { try Decimal(try $0.text(), format: .currency(code: "EUR")) }
-                
-                return MenuOfTheDay.MenuItem(date: date, name: nameParts, allergens: allergens, additives: additives, types: types, prices: prices)
-            }
-            
-            let announcements = try dayElement.select(".mensa_tagesinfo .mensa_tagesinfo_content").map { announcementElement in
-                announcementElement.textNodes().map { $0.text().trimmingCharacters(in: .whitespaces) }.joined(separator: " ")
-            }
+            let menu = try extractMenuItems(from: dayElement, for: date)
+            let announcements = try extractAnnouncements(from: dayElement)
             
             guard !menu.isEmpty || !announcements.isEmpty else { return nil }
             

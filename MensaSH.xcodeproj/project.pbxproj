@@ -44,7 +44,7 @@
 		ADE160302CEA6C4B00A9A177 /* Exceptions for "MensaSH" folder in "MensaSHTests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Location.swift,
+				Domain/Location.swift,
 				MensaParser.swift,
 			);
 			target = ADE160092CEA6B8700A9A177 /* MensaSHTests */;
