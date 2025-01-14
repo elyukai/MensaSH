@@ -71,7 +71,7 @@ enum Location: Hashable, CaseIterable, RawRepresentable {
         }
     }
 
-    static var allCases: [Location] = [
+    static let allCases: [Location] = [
         .kiel(.mensa1),
         .kiel(.mensa2),
         .kiel(.mensaGaarden),
