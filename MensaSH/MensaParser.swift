@@ -65,9 +65,13 @@ actor MensaParser {
             let additives = try extractDataSet("data-zusatzstoffe", from: menuElement)
             let types = try extractDataSet("data-arten", from: menuElement)
             
-            let prices = try menuElement.select(".menu_preis").first()!.children().filter { $0.tagName() == "span" }.map { try Decimal(try $0.text(), format: .currency(code: "EUR")) }
+            let prices = try menuElement.select(".menu_preis").first()!.children()
+                .filter { $0.tagName() == "span" }
+                .map { try Decimal(try $0.text(), format: .currency(code: "EUR")) }
             
-            return MenuOfTheDay.MenuItem(date: date, name: nameParts, allergens: allergens, additives: additives, types: types, prices: prices)
+            let co2stars = Int(try menuElement.select(".co2star").first()!.attr("data-anz"))!
+            
+            return MenuOfTheDay.MenuItem(date: date, name: nameParts, allergens: allergens, additives: additives, types: types, prices: prices, co2stars: co2stars)
         }
     }
     

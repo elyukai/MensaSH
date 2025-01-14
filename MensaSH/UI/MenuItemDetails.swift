@@ -50,6 +50,6 @@ struct MenuItemDetails: View {
 
 #Preview {
     NavigationStack {
-        MenuItemDetails(menuItem: .init(date: .now, name: [.init(name: "Tortellini", additions: nil), .init(name: "mit Rucola", additions: nil)], allergens: [], additives: [], types: [], prices: [2.5, 3.75, 5.15]), ingredients: .constant([:]))
+        MenuItemDetails(menuItem: .init(date: .now, name: [.init(name: "Tortellini", additions: nil), .init(name: "mit Rucola", additions: nil)], allergens: [], additives: [], types: [], prices: [2.5, 3.75, 5.15], co2stars: 2), ingredients: .constant([:]))
     }
 }
