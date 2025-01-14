@@ -113,20 +113,39 @@ actor MensaParser {
         return dict
     }
     
+    func readIngredient(from button: Element) throws -> Ingredient? {
+        let abbreviation = try button.attr("data-wert")
+        guard let kind = Ingredient.Kind(rawValue: try button.attr("data-typ")) else { return nil }
+        
+        let exclude = switch try button.attr("data-ex") {
+        case "0": false
+        case "", "1": true
+        default:
+            false
+        }
+        
+        let name = try button.children().first(where: {
+            content in try content.tagName() == "span" && content.classNames().isEmpty
+        })?.text() ?? abbreviation
+        
+        let include = try button.attr("data-include")
+        let includes: [String] = include.isEmpty ? [] : include.split(separator: "|").map { String($0) }
+        
+        return Ingredient(abbreviation: abbreviation, name: name, kind: kind, exclude: exclude, includes: includes)
+    }
+    
     func readIngredients(language: Language) async throws -> [String: Ingredient] {
         let document = try await requestHTMLDocument(for: .flensburg(.mensa), inWeek: .current, language: language)
-        let ingredients = try document.select(".mensablock_filterelemente_block .filterbutton").compactMap { button -> (String, Ingredient)? in
-            let abbreviation = try button.attr("data-wert")
-            guard let kind = Ingredient.Kind(rawValue: try button.attr("data-typ")) else { return nil }
-            let exclude = switch try button.attr("data-ex") {
-            case "0": false
-            case "", "1": true
-            default:
-                false
+        let filterButtons = try document.select(".mensablock_filterelemente_block .filterbutton")
+        let ingredients = try filterButtons.compactMap { button in
+            try readIngredient(from: button).map { ingredient in
+                (
+                    ingredient.id,
+                    ingredient
+                )
             }
-            let name = try button.children().first(where: { content in try content.tagName() == "span" && content.classNames().isEmpty })?.text() ?? abbreviation
-            return (abbreviation, Ingredient(abbreviation: abbreviation, name: name, kind: kind, exclude: exclude))
         }
+        
         return Dictionary(uniqueKeysWithValues: ingredients)
     }
 }

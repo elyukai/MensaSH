@@ -27,5 +27,5 @@ struct MenuItemAbbreviationList: View {
 }
 
 #Preview {
-    MenuItemAbbreviationList(label: "Allergens", list: ["GlH"], abbreviations: ["GlH": Ingredient(abbreviation: "GlH", name: "Gluten", kind: .allergen, exclude: true)])
+    MenuItemAbbreviationList(label: "Allergens", list: ["GlH"], abbreviations: ["GlH": Ingredient(abbreviation: "GlH", name: "Gluten", kind: .allergen, exclude: true, includes: [])])
 }
