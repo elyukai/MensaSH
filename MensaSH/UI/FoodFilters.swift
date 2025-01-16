@@ -23,6 +23,10 @@ struct FoodFilters: View {
         prepareIngredients(ofKind: .preference).sorted(by: { $0.name.localizedStandardCompare($1.name) == .orderedAscending })
     }
     
+    private var dependentPreferences: Set<Ingredient.ID> {
+        Ingredient.extend(filters: filters, withTransitiveFiltersFrom: preferences).subtracting(filters)
+    }
+    
     var body: some View {
         List {
             if !ingredients.isEmpty {
@@ -50,9 +54,7 @@ struct FoodFilters: View {
                 
                 Section("Preferences") {
                     ForEach(preferences) { preference in
-                        Toggle(isOn: createBinding(for: preference)) {
-                            Text(preference.name)
-                        }
+                        PreferenceRow(preference: preference, preferenceValue: createBinding(for: preference), dependentPreferences: dependentPreferences)
                     }
                 }
             }
@@ -157,7 +159,7 @@ struct FoodFilters: View {
             "AGL": Ingredient(abbreviation: "AGL", name: "Lamm aus artgerechter Haltung", kind: .preference, exclude: false, includes: []),
             "AGG": Ingredient(abbreviation: "AGG", name: "Geflügel aus artgerechter Haltung", kind: .preference, exclude: false, includes: []),
             "AGF": Ingredient(abbreviation: "AGF", name: "Fisch aus artgerechter Haltung", kind: .preference, exclude: false, includes: []),
-            "A": Ingredient(abbreviation: "A", name: "ohne Alkohol", kind: .preference, exclude: true, includes: [])
+            "A": Ingredient(abbreviation: "A", name: "Alkohol", kind: .preference, exclude: true, includes: [])
         ])
     }
 }

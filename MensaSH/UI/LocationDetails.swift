@@ -21,6 +21,10 @@ struct LocationDetails: View {
     @State private var week: MensaParser.Week = .current
     @State private var showFilters: Bool = false
     
+    private var extendedFilters: Set<Ingredient.ID> {
+        Ingredient.extend(filters: filters, withTransitiveFiltersFrom: ingredients.values)
+    }
+    
     var selectedMenu: [MenuOfTheDay]? {
         if let menu = menusByLocation[location] {
             let intermediateMenu = switch week {
@@ -32,7 +36,7 @@ struct LocationDetails: View {
                 .filter { $0.date >= Calendar.current.startOfDay(for: .now) }
                 .map { menu in
                     let filteredMenu = menu.menu.filter { menuItem in
-                        filters.allSatisfy { filterId in
+                        extendedFilters.allSatisfy { filterId in
                             guard let ingredient = ingredients[filterId] else { return true }
                             return menuItem.contains(ingredient) != ingredient.exclude
                         }

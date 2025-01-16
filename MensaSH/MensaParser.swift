@@ -132,10 +132,12 @@ actor MensaParser {
             content in try content.tagName() == "span" && content.classNames().isEmpty
         })?.text() ?? abbreviation
         
+        let nameWithoutExcludePrefix = name.replacing(/^((without|ohne) )/.ignoresCase(), with: "")
+        
         let include = try button.attr("data-include")
         let includes: [String] = include.isEmpty ? [] : include.split(separator: "|").map { String($0) }
         
-        return Ingredient(abbreviation: abbreviation, name: name, kind: kind, exclude: exclude, includes: includes)
+        return Ingredient(abbreviation: abbreviation, name: nameWithoutExcludePrefix, kind: kind, exclude: exclude, includes: includes)
     }
     
     func readIngredients(language: Language) async throws -> [String: Ingredient] {
