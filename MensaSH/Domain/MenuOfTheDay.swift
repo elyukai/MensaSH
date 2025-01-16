@@ -21,7 +21,7 @@ struct MenuOfTheDay: Identifiable, Hashable {
         let additives: [String]
         let types: [String]
         let prices: [Decimal]
-        let co2stars: Int
+        let co2stars: Int?
         
         var id: String { description }
         var description: String {
