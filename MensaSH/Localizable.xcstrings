@@ -145,6 +145,22 @@
         }
       }
     },
+    "CO₂ Score" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CO₂-Score"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CO₂ Score"
+          }
+        }
+      }
+    },
     "Current Week" : {
       "localizations" : {
         "de" : {

@@ -19,6 +19,22 @@ struct MenuItemDetails: View {
             }
             LabeledContent("Types", value: menuItem.types.isEmpty ? "—" : menuItem.types.map { ingredients[$0]?.name ?? $0 }.joined(separator: ", "))
             
+            LabeledContent("CO₂ Score") {
+                HStack(alignment: .center, spacing: 3) {
+                    if let co2stars = menuItem.co2stars {
+                        ForEach(1..<4) { stars in
+                            Image(systemName: co2stars >= stars ? "star.fill" : "star")
+                                .foregroundStyle(.green)
+                        }
+                    } else {
+                        ForEach(1..<4) { stars in
+                            Image(systemName: "star")
+                                .foregroundStyle(.placeholder)
+                        }
+                    }
+                }
+            }
+            
             if !menuItem.prices.isEmpty {
                 Section("Price") {
                     if menuItem.prices.count == 3 && menuItem.hasDifferentPrices {
