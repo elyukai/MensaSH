@@ -15,7 +15,7 @@ struct LocationDetails: View {
     var location: Location
     @Binding var menusByLocation: [Location: (current: [MenuOfTheDay], next: [MenuOfTheDay])]
     @Binding var ingredients: [String: Ingredient]
-    @Binding var selectedMenuItem: MenuOfTheDay.MenuItem?
+    @Binding var selectedMenuItem: MenuOfTheDay.Item?
     var loadMenu: ((Location) async -> Void)
     var loadIngredients: (() async -> Void)
     @State private var week: MensaParser.Week = .current
@@ -35,14 +35,14 @@ struct LocationDetails: View {
             return intermediateMenu
                 .filter { $0.date >= Calendar.current.startOfDay(for: .now) }
                 .map { menu in
-                    let filteredMenu = menu.menu.filter { menuItem in
+                    let filteredMenu = menu.items.filter { menuItem in
                         extendedFilters.allSatisfy { filterId in
                             guard let ingredient = ingredients[filterId] else { return true }
                             return menuItem.contains(ingredient) != ingredient.exclude
                         }
                     }
                     
-                    return MenuOfTheDay(date: menu.date, menu: filteredMenu, announcements: menu.announcements)
+                    return MenuOfTheDay(date: menu.date, items: filteredMenu, announcements: menu.announcements)
                 }
         } else {
             return nil
@@ -172,7 +172,7 @@ struct LocationDetails: View {
 }
 
 #Preview {
-    @Previewable @State var selectedMenuItem: MenuOfTheDay.MenuItem? = nil
+    @Previewable @State var selectedMenuItem: MenuOfTheDay.Item? = nil
     
     LocationDetails(location: .flensburg(.mensa), menusByLocation: .constant([:]), ingredients: .constant([:]), selectedMenuItem: $selectedMenuItem, loadMenu: { _ in Task { } }, loadIngredients: { Task { } })
 }

@@ -11,7 +11,7 @@ struct MensaSHParserTests {
 
     @Test func testHTML() async throws {
         let parser = MensaParser()
-        let html = try await parser.readWeeklyMenu()
+        let html = try await parser.readWeeklyMenu(language: .english)
         print(html)
         #expect(html.count == Location.allCases.count)
     }

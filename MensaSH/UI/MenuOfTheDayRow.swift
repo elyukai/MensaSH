@@ -16,11 +16,11 @@ struct MenuOfTheDayRow: View {
                 AnnouncementRow(text: announcement)
             }
             
-            ForEach(menu.menu) { menuItem in
+            ForEach(menu.items) { menuItem in
                 MenuItemRow(menuItem: menuItem)
             }
             
-            if menu.announcements.isEmpty && menu.menu.isEmpty {
+            if menu.announcements.isEmpty && menu.items.isEmpty {
                 Text("No menu item matches your filters")
                     .foregroundStyle(.secondary)
             }
@@ -30,9 +30,9 @@ struct MenuOfTheDayRow: View {
 
 #Preview {
     List {
-        MenuOfTheDayRow(menu: .init(date: .now, menu: [
-            .init(date: .now, name: [.init(name: "Tortellini", additions: nil), .init(name: "mit Rucola", additions: nil)], allergens: [], additives: [], types: [], prices: [2.5, 3.75, 5.15], co2stars: 3),
-            .init(date: .now, name: [.init(name: "Fischstäbchen", additions: nil), .init(name: "mit Cocktailsoße", additions: nil), .init(name: "und Pommes", additions: nil)], allergens: [], additives: [], types: [], prices: [3.75, 4.8, 6.1], co2stars: 2)
+        MenuOfTheDayRow(menu: .init(date: .now, items: [
+            .init(date: .now, name: [.init(name: "Tortellini", additions: []), .init(name: "mit Rucola", additions: [])], allergens: [], additives: [], types: [], prices: [2.5, 3.75, 5.15], co2stars: 3),
+            .init(date: .now, name: [.init(name: "Fischstäbchen", additions: []), .init(name: "mit Cocktailsoße", additions: []), .init(name: "und Pommes", additions: [])], allergens: [], additives: [], types: [], prices: [3.75, 4.8, 6.1], co2stars: 2)
         ], announcements: []))
     }
 }

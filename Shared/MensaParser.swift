@@ -36,21 +36,21 @@ actor MensaParser {
         return doc
     }
     
-    private func extractMenuItemNameParts(from element: Element) throws -> [MenuOfTheDay.MenuItem.NamePart] {
+    private func extractMenuItemNameParts(from element: Element) throws -> [MenuOfTheDay.Item.NamePart] {
         let nameElementChildren = try element.select(".menu_name").first()!.textNodes()
         return nameElementChildren.compactMap { textNode in
             let name = textNode.text().trimmingCharacters(in: .whitespaces)
-            let additions = { () -> [String]? in
+            let additions = { () -> [String] in
                 if let additionsElement = textNode.nextSibling() as? Element,
                    additionsElement.tagName() == "span",
                    let content = try? /\((.+)\)/.wholeMatch(in: additionsElement.text()) {
                     return content.output.1.split(separator: /, ?/).map { String($0) }
                 } else {
-                    return nil
+                    return []
                 }
             }()
             
-            return MenuOfTheDay.MenuItem.NamePart(name: name, additions: additions)
+            return MenuOfTheDay.Item.NamePart(name: name, additions: additions)
         }
     }
     
@@ -58,7 +58,7 @@ actor MensaParser {
         try element.attr(name).split(separator: "|").map { String($0) }
     }
     
-    private func extractMenuItems(from element: Element, for date: Date) throws -> [MenuOfTheDay.MenuItem] {
+    private func extractMenuItems(from element: Element, for date: Date) throws -> [MenuOfTheDay.Item] {
         try element.select(".mensa_menu_detail").map { menuElement in
             let nameParts = try extractMenuItemNameParts(from: menuElement)
             let allergens = try extractDataSet("data-allergene", from: menuElement)
@@ -71,7 +71,7 @@ actor MensaParser {
             
             let co2stars = Int(try menuElement.select(".co2star").first()?.attr("data-anz") ?? "")
             
-            return MenuOfTheDay.MenuItem(date: date, name: nameParts, allergens: allergens, additives: additives, types: types, prices: prices, co2stars: co2stars)
+            return MenuOfTheDay.Item(date: date, name: nameParts, allergens: allergens, additives: additives, types: types, prices: prices, co2stars: co2stars)
         }
     }
     
@@ -91,7 +91,7 @@ actor MensaParser {
             
             guard !menu.isEmpty || !announcements.isEmpty else { return nil }
             
-            return MenuOfTheDay(date: date, menu: menu, announcements: announcements)
+            return MenuOfTheDay(date: date, items: menu, announcements: announcements)
         }.sorted(by: { $0.date < $1.date })
     }
     

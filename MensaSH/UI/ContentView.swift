@@ -16,7 +16,7 @@ struct ContentView: View {
     @Binding var menusByLocation: [Location: (current: [MenuOfTheDay], next: [MenuOfTheDay])]
     @Binding var ingredients: [String: Ingredient]
     @State private var columnVisibility: NavigationSplitViewVisibility = .all
-    @State private var selectedMenuItem: MenuOfTheDay.MenuItem? = nil
+    @State private var selectedMenuItem: MenuOfTheDay.Item? = nil
     
     private var locationListBinding: Binding<Location?> {
         Binding {

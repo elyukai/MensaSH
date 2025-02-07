@@ -5,6 +5,8 @@
 //  Created by Lukas Obermann on 18.11.24.
 //
 
+import AppIntents
+
 enum Location: Hashable, CaseIterable, RawRepresentable {
     init?(rawValue: Int) {
         guard let location = Building(rawValue: rawValue)?.location else { return nil }
@@ -69,6 +71,11 @@ enum Location: Hashable, CaseIterable, RawRepresentable {
         case .wedel(.cafeteria): (.wedel, .cafeteriaWedel)
         case .osterroenfeld(.mensa): (.osterroenfeld, .mensaOsterroenfeld)
         }
+    }
+    
+    var description: String {
+        let (city, building) = rawValues
+        return city.description + " — " + building.description
     }
 
     static let allCases: [Location] = [

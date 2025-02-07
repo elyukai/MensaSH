@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MenuItemRow: View {
-    var menuItem: MenuOfTheDay.MenuItem
+    var menuItem: MenuOfTheDay.Item
     
     var body: some View {
         NavigationLink(value: menuItem) {
@@ -27,6 +27,6 @@ struct MenuItemRow: View {
 
 #Preview {
     List {
-        MenuItemRow(menuItem: .init(date: .now, name: [.init(name: "Tortellini", additions: nil), .init(name: "mit Rucola", additions: nil)], allergens: [], additives: [], types: [], prices: [2.5, 3.75, 5.15], co2stars: 2))
+        MenuItemRow(menuItem: .init(date: .now, name: [.init(name: "Tortellini", additions: []), .init(name: "mit Rucola", additions: [])], allergens: [], additives: [], types: [], prices: [2.5, 3.75, 5.15], co2stars: 2))
     }
 }

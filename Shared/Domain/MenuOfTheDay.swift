@@ -9,12 +9,12 @@ import Foundation
 
 struct MenuOfTheDay: Identifiable, Hashable {
     let date: Date
-    let menu: [MenuItem]
+    let items: [Item]
     let announcements: [String]
-    
+
     var id: Date { date }
-    
-    struct MenuItem: Identifiable, Hashable {
+
+    struct Item: Identifiable, Hashable {
         let date: Date
         let name: [NamePart]
         let allergens: [String]
@@ -22,7 +22,7 @@ struct MenuOfTheDay: Identifiable, Hashable {
         let types: [String]
         let prices: [Decimal]
         let co2stars: Int?
-        
+
         var id: String { description }
         var description: String {
             name.map { $0.name }.joined(separator: " ")
@@ -30,11 +30,11 @@ struct MenuOfTheDay: Identifiable, Hashable {
         var fullDescription: String {
             name.map { $0.description }.joined(separator: " ")
         }
-        
+
         var hasDifferentPrices: Bool {
             Set(prices).count > 1
         }
-        
+
         func contains(_ ingredient: Ingredient) -> Bool {
             switch ingredient.kind {
             case .allergen:
@@ -45,16 +45,16 @@ struct MenuOfTheDay: Identifiable, Hashable {
                 types.contains { $0 == ingredient.abbreviation }
             }
         }
-        
+
         struct NamePart: Hashable {
             let name: String
-            let additions: [String]?
-            
+            let additions: [String]
+
             var description: String {
-                if let additions {
-                    return "\(name) (\(additions.joined(separator: ", ")))"
-                } else {
+                if additions.isEmpty {
                     return name
+                } else {
+                    return "\(name) (\(additions.joined(separator: ", ")))"
                 }
             }
         }

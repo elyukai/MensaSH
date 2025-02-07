@@ -1,40 +1,37 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "Additives" : {
+    "+%lld more" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zusatzstoffe"
+            "value" : "+%lld weitere"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Additives"
-          }
-        }
-      }
-    },
-    "Allergens" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Allergene"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Allergens"
+            "value" : "+%lld more"
           }
         }
       }
     },
     "Building" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gebäude"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Building"
+          }
+        }
+      }
     },
     "Cafeteria “Dockside”" : {
       "localizations" : {
@@ -116,82 +113,50 @@
         }
       }
     },
-    "Canteens" : {
+    "Configuration" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Mensen"
+            "value" : "Konfiguration"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Canteens"
+            "value" : "Configuration"
           }
         }
       }
     },
-    "Close" : {
+    "Display a canteen’s current or upcoming menu." : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Schließen"
+            "value" : "Zeigt das aktuelle oder nächste Tagesmenü einer Mensa an."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Close"
+            "value" : "Display a canteen’s current or upcoming menu."
           }
         }
       }
     },
-    "CO₂ Score" : {
+    "Display the selected canteen’s current or upcoming menu." : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "CO₂-Score"
+            "value" : "Zeigt das aktuelle oder nächste Tagesmenü der gewählten Mensa an."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "CO₂ Score"
-          }
-        }
-      }
-    },
-    "Current Week" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aktuelle Woche"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Current Week"
-          }
-        }
-      }
-    },
-    "Day" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tag"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Day"
+            "value" : "Display the selected canteen’s current or upcoming menu."
           }
         }
       }
@@ -208,70 +173,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dockside"
-          }
-        }
-      }
-    },
-    "Everyone" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Alle"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Everyone"
-          }
-        }
-      }
-    },
-    "Filter" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Filtern"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Filter"
-          }
-        }
-      }
-    },
-    "Filtered by:" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Gefiltert nach:"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Filtered by:"
-          }
-        }
-      }
-    },
-    "Filters" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Filter"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Filters"
           }
         }
       }
@@ -340,18 +241,18 @@
         }
       }
     },
-    "Loading…" : {
+    "Location" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Laden …"
+            "value" : "Standort"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Loading…"
+            "value" : "Location"
           }
         }
       }
@@ -580,98 +481,34 @@
         }
       }
     },
-    "Next Week" : {
+    "Menu of the Day" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nächste Woche"
+            "value" : "Tagesmenü"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Next Week"
+            "value" : "Menu of the Day"
           }
         }
       }
     },
-    "No location selected" : {
+    "No menu for this day" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Keine Mensa ausgewählt"
+            "value" : "Kein Menü für diesen Tag"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "No location selected"
-          }
-        }
-      }
-    },
-    "No menu item matches your filters" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kein Menüeintrag entspricht deinen Filtern"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No menu item matches your filters"
-          }
-        }
-      }
-    },
-    "No menu item selected" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kein Menüeintrag ausgewählt"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No menu item selected"
-          }
-        }
-      }
-    },
-    "No menu items" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keine Menüeinträge"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No menu items"
-          }
-        }
-      }
-    },
-    "None" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keine"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "None"
+            "value" : "No menu for this day"
           }
         }
       }
@@ -692,53 +529,18 @@
         }
       }
     },
-    "Preferences" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Essensvorlieben"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Preferences"
-          }
-        }
-      }
-    },
-    "Price" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Preis"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Price"
-          }
-        }
-      }
-    },
     "Price Category" : {
-
-    },
-    "Reset" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zurücksetzen"
+            "value" : "Preiskategorie"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Reset"
+            "value" : "Price Category"
           }
         }
       }
@@ -775,22 +577,6 @@
         }
       }
     },
-    "Types" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Arten"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Types"
-          }
-        }
-      }
-    },
     "University Members" : {
       "localizations" : {
         "de" : {
@@ -819,70 +605,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Wedel"
-          }
-        }
-      }
-    },
-    "Week" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Woche"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Week"
-          }
-        }
-      }
-    },
-    "without %@" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ohne %@"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "without %@"
-          }
-        }
-      }
-    },
-    "Without additives" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ohne Zusatzstoffe"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Without additives"
-          }
-        }
-      }
-    },
-    "Without allergens" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ohne Allergene"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Without allergens"
           }
         }
       }
