@@ -18,7 +18,7 @@ actor MensaParser {
     }
     
     private func requestHTMLDocument(for location: Location, inWeek week: Week, language: Language) async throws -> Document {
-        let (city, building) = location.rawValues
+        let (city, building) = await location.rawValues
         
         let baseUrl = switch language {
             case .german: "https://studentenwerk.sh/de/essen-uebersicht"
@@ -110,7 +110,7 @@ actor MensaParser {
     func readWeeklyMenu(language: Language) async throws -> [Location: (current: [MenuOfTheDay], next: [MenuOfTheDay])] {
         var dict: [Location: (current: [MenuOfTheDay], next: [MenuOfTheDay])] = [:]
         
-        for location in Location.allCases {
+        for location in await Location.allCases {
             dict[location] = try await readWeeklyMenu(for: location, language: language)
         }
         
@@ -143,15 +143,14 @@ actor MensaParser {
     func readIngredients(language: Language) async throws -> [String: Ingredient] {
         let document = try await requestHTMLDocument(for: .flensburg(.mensa), inWeek: .current, language: language)
         let filterButtons = try document.select(".mensablock_filterelemente_block .filterbutton")
-        let ingredients = try filterButtons.compactMap { button in
-            try readIngredient(from: button).map { ingredient in
-                (
-                    ingredient.id,
-                    ingredient
-                )
+        var ingredients = [String: Ingredient]()
+        
+        for button in filterButtons {
+            if let ingredient = try? readIngredient(from: button) {
+                ingredients[await ingredient.id] = ingredient
             }
         }
         
-        return Dictionary(uniqueKeysWithValues: ingredients)
+        return ingredients
     }
 }
