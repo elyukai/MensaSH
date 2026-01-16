@@ -52,6 +52,7 @@ struct MensaSHWidgetList: View {
     @Environment(\.widgetFamily) var widgetFamily: WidgetFamily
     var entry: Provider.Entry
     var maxItems: Int
+    let showPrice: Bool
     
     var divider: some View {
         Divider()
@@ -79,7 +80,7 @@ struct MensaSHWidgetList: View {
                     Text(menuItem.description)
                         .font(.subheadline)
                         .lineLimit(3)
-                    if let price = menuItem.prices[safe: entry.configuration.priceCategory.index] {
+                    if showPrice, let price = menuItem.prices[safe: entry.configuration.priceCategory.index] {
                         Spacer(minLength: 4)
                         Text(price, format: .currency(code: "EUR"))
                             .font(.footnote)
@@ -175,7 +176,7 @@ struct MensaSHWidgetEntryView : View {
             .padding(.top, canteenNamePaddingTop)
             .padding(.bottom, canteenNamePaddingBottom)
             
-            MensaSHWidgetList(entry: entry, maxItems: maxItems)
+            MensaSHWidgetList(entry: entry, maxItems: maxItems, showPrice: entry.configuration.showPrice)
                 .padding(.top, 6)
             
             Spacer(minLength: 0)

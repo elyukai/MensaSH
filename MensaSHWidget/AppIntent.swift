@@ -14,7 +14,25 @@ struct ConfigurationAppIntent: WidgetConfigurationIntent {
 
     @Parameter(title: "Location", default: .mensa1)
     var building: Building
+    
+    @Parameter(title: "Show Price", default: true)
+    var showPrice: Bool
 
     @Parameter(title: "Price Category", default: .students)
     var priceCategory: PriceCategory
+    
+    static var parameterSummary: some ParameterSummary {
+        When(\.$showPrice, .equalTo, true) {
+            Summary {
+                \.$building
+                \.$showPrice
+                \.$priceCategory
+            }
+        } otherwise: {
+            Summary {
+                \.$building
+                \.$showPrice
+            }
+        }
+    }
 }

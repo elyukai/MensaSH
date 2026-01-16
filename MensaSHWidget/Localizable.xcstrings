@@ -561,6 +561,22 @@
         }
       }
     },
+    "Show Price" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preis anzeigen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show Price"
+          }
+        }
+      }
+    },
     "Students" : {
       "localizations" : {
         "de" : {
