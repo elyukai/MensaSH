@@ -34,7 +34,20 @@
       }
     },
     "Building" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gebääude"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Building"
+          }
+        }
+      }
     },
     "Cafeteria “Dockside”" : {
       "localizations" : {
@@ -725,7 +738,20 @@
       }
     },
     "Price Category" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preiskategorie"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Price Category"
+          }
+        }
+      }
     },
     "Reset" : {
       "localizations" : {
