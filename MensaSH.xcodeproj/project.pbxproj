@@ -7,32 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD002A782F1A4F2D000FEC8D /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD71E3492D398FC500739792 /* SwiftUI.framework */; };
+		AD002A792F1A4F2D000FEC8D /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD71E3472D398FC500739792 /* WidgetKit.framework */; };
+		AD002A7A2F1A4F2D000FEC8D /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = AD002A742F1A4F2D000FEC8D /* SwiftSoup */; };
+		AD002A822F1A4FD1000FEC8D /* MensaSHWatchWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = AD002A7F2F1A4F2D000FEC8D /* MensaSHWatchWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AD0F1A9B2D4E5B2300FBB61D /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = AD0F1A9A2D4E5B2300FBB61D /* SwiftSoup */; };
 		AD71E3482D398FC500739792 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD71E3472D398FC500739792 /* WidgetKit.framework */; };
 		AD71E34A2D398FC500739792 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD71E3492D398FC500739792 /* SwiftUI.framework */; };
 		AD71E3582D398FC600739792 /* MensaSHWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = AD71E3452D398FC500739792 /* MensaSHWidgetExtension.appex */; platformFilters = (ios, macos, ); settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		ADD662882F197F6400BF82FC /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = ADD662872F197F6400BF82FC /* SwiftSoup */; };
-		ADD662922F19889B00BF82FC /* MensaSHWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = AD71E3452D398FC500739792 /* MensaSHWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		ADDAE7AA2E5603A20097DD38 /* MensaSHWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = ADDAE78A2E5603A10097DD38 /* MensaSHWatch Watch App.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		ADE1602C2CEA6BD600A9A177 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = ADE1602B2CEA6BD600A9A177 /* SwiftSoup */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		AD002A862F1A4FD8000FEC8D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADE15FEF2CEA6B8400A9A177 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD002A732F1A4F2D000FEC8D;
+			remoteInfo = MensaSHWatchWidgetExtension;
+		};
 		AD71E3562D398FC600739792 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = ADE15FEF2CEA6B8400A9A177 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AD71E3442D398FC500739792;
-			remoteInfo = MensaSHWidgetExtension;
-		};
-		ADD662902F19889100BF82FC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = ADE15FEF2CEA6B8400A9A177 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AD71E3442D398FC500739792;
-			remoteInfo = MensaSHWidgetExtension;
-		};
-		ADD662932F19889B00BF82FC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = ADE15FEF2CEA6B8400A9A177 /* Project object */;
 			proxyType = 1;
@@ -77,6 +73,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		AD002A852F1A4FD1000FEC8D /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				AD002A822F1A4FD1000FEC8D /* MensaSHWatchWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AD71E3592D398FC600739792 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -87,17 +94,6 @@
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ADD662952F19889B00BF82FC /* Embed Foundation Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 8;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				ADD662922F19889B00BF82FC /* MensaSHWidgetExtension.appex in Embed Foundation Extensions */,
-			);
-			name = "Embed Foundation Extensions";
-			runOnlyForDeploymentPostprocessing = 1;
 		};
 		ADDAE7AE2E5603A20097DD38 /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -113,6 +109,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AD002A7F2F1A4F2D000FEC8D /* MensaSHWatchWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MensaSHWatchWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD71E3452D398FC500739792 /* MensaSHWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MensaSHWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD71E3472D398FC500739792 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = /System/Library/Frameworks/WidgetKit.framework; sourceTree = "<absolute>"; };
 		AD71E3492D398FC500739792 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = /System/Library/Frameworks/SwiftUI.framework; sourceTree = "<absolute>"; };
@@ -125,6 +122,18 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		AD002A802F1A4F2D000FEC8D /* Exceptions for "MensaSHWidget" folder in "MensaSHWatchWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				AppIntent.swift,
+				Assets.xcassets,
+				Info.plist,
+				Localizable.xcstrings,
+				MensaSHWidget.swift,
+				MensaSHWidgetBundle.swift,
+			);
+			target = AD002A732F1A4F2D000FEC8D /* MensaSHWatchWidgetExtension */;
+		};
 		AD0F1A962D4E5AA300FBB61D /* Exceptions for "Shared" folder in "MensaSHTests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -226,6 +235,7 @@
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				AD71E35D2D398FC700739792 /* Exceptions for "MensaSHWidget" folder in "MensaSHWidgetExtension" target */,
+				AD002A802F1A4F2D000FEC8D /* Exceptions for "MensaSHWidget" folder in "MensaSHWatchWidgetExtension" target */,
 			);
 			path = MensaSHWidget;
 			sourceTree = "<group>";
@@ -267,6 +277,16 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		AD002A772F1A4F2D000FEC8D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD002A782F1A4F2D000FEC8D /* SwiftUI.framework in Frameworks */,
+				AD002A792F1A4F2D000FEC8D /* WidgetKit.framework in Frameworks */,
+				AD002A7A2F1A4F2D000FEC8D /* SwiftSoup in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AD71E3422D398FC500739792 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -359,6 +379,7 @@
 				ADDAE78A2E5603A10097DD38 /* MensaSHWatch Watch App.app */,
 				ADDAE7962E5603A20097DD38 /* MensaSHWatch Watch AppTests.xctest */,
 				ADDAE7A02E5603A20097DD38 /* MensaSHWatch Watch AppUITests.xctest */,
+				AD002A7F2F1A4F2D000FEC8D /* MensaSHWatchWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -366,6 +387,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		AD002A732F1A4F2D000FEC8D /* MensaSHWatchWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD002A7C2F1A4F2D000FEC8D /* Build configuration list for PBXNativeTarget "MensaSHWatchWidgetExtension" */;
+			buildPhases = (
+				AD002A762F1A4F2D000FEC8D /* Sources */,
+				AD002A772F1A4F2D000FEC8D /* Frameworks */,
+				AD002A7B2F1A4F2D000FEC8D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				AD71E34B2D398FC500739792 /* MensaSHWidget */,
+			);
+			name = MensaSHWatchWidgetExtension;
+			packageProductDependencies = (
+				AD002A742F1A4F2D000FEC8D /* SwiftSoup */,
+			);
+			productName = MensaSHWidgetExtension;
+			productReference = AD002A7F2F1A4F2D000FEC8D /* MensaSHWatchWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		AD71E3442D398FC500739792 /* MensaSHWidgetExtension */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AD71E35C2D398FC700739792 /* Build configuration list for PBXNativeTarget "MensaSHWidgetExtension" */;
@@ -396,13 +440,12 @@
 				ADDAE7862E5603A10097DD38 /* Sources */,
 				ADDAE7872E5603A10097DD38 /* Frameworks */,
 				ADDAE7882E5603A10097DD38 /* Resources */,
-				ADD662952F19889B00BF82FC /* Embed Foundation Extensions */,
+				AD002A852F1A4FD1000FEC8D /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				ADD662912F19889100BF82FC /* PBXTargetDependency */,
-				ADD662942F19889B00BF82FC /* PBXTargetDependency */,
+				AD002A872F1A4FD8000FEC8D /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				ADDAE78B2E5603A10097DD38 /* MensaSHWatch Watch App */,
@@ -597,11 +640,19 @@
 				ADDAE7892E5603A10097DD38 /* MensaSHWatch Watch App */,
 				ADDAE7952E5603A20097DD38 /* MensaSHWatch Watch AppTests */,
 				ADDAE79F2E5603A20097DD38 /* MensaSHWatch Watch AppUITests */,
+				AD002A732F1A4F2D000FEC8D /* MensaSHWatchWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		AD002A7B2F1A4F2D000FEC8D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AD71E3432D398FC500739792 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -654,6 +705,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		AD002A762F1A4F2D000FEC8D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AD71E3412D398FC500739792 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -706,6 +764,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		AD002A872F1A4FD8000FEC8D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD002A732F1A4F2D000FEC8D /* MensaSHWatchWidgetExtension */;
+			targetProxy = AD002A862F1A4FD8000FEC8D /* PBXContainerItemProxy */;
+		};
 		AD71E3572D398FC600739792 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			platformFilters = (
@@ -714,16 +777,6 @@
 			);
 			target = AD71E3442D398FC500739792 /* MensaSHWidgetExtension */;
 			targetProxy = AD71E3562D398FC600739792 /* PBXContainerItemProxy */;
-		};
-		ADD662912F19889100BF82FC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AD71E3442D398FC500739792 /* MensaSHWidgetExtension */;
-			targetProxy = ADD662902F19889100BF82FC /* PBXContainerItemProxy */;
-		};
-		ADD662942F19889B00BF82FC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AD71E3442D398FC500739792 /* MensaSHWidgetExtension */;
-			targetProxy = ADD662932F19889B00BF82FC /* PBXContainerItemProxy */;
 		};
 		ADDAE7982E5603A20097DD38 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -754,6 +807,88 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		AD002A7D2F1A4F2D000FEC8D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = MensaSHWidget/MensaSHWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 7;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MensaSHWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MensaSHWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lukasobermann.MensaSH.watch.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "watchos watchsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				XROS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Debug;
+		};
+		AD002A7E2F1A4F2D000FEC8D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = MensaSHWidget/MensaSHWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 7;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MensaSHWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MensaSHWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lukasobermann.MensaSH.watch.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "watchos watchsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				XROS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Release;
+		};
 		AD71E35A2D398FC600739792 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -781,16 +916,16 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.6;
-				MARKETING_VERSION = 1.0.2;
-				PRODUCT_BUNDLE_IDENTIFIER = com.lukasobermann.MensaSH.MensaSHWidget;
+				MARKETING_VERSION = 1.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lukasobermann.MensaSH.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx watchos watchsimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 6.0;
-				TARGETED_DEVICE_FAMILY = "1,2,4";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				XROS_DEPLOYMENT_TARGET = 2.1;
 			};
 			name = Debug;
@@ -822,16 +957,16 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.6;
-				MARKETING_VERSION = 1.0.2;
-				PRODUCT_BUNDLE_IDENTIFIER = com.lukasobermann.MensaSH.MensaSHWidget;
+				MARKETING_VERSION = 1.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lukasobermann.MensaSH.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx watchos watchsimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 6.0;
-				TARGETED_DEVICE_FAMILY = "1,2,4";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				XROS_DEPLOYMENT_TARGET = 2.1;
 			};
 			name = Release;
@@ -853,8 +988,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.lukasobermann.MensaSH.MensaSHWatch;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lukasobermann.MensaSH.watch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -886,8 +1021,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.lukasobermann.MensaSH.MensaSHWatch;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lukasobermann.MensaSH.watch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1312,6 +1447,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		AD002A7C2F1A4F2D000FEC8D /* Build configuration list for PBXNativeTarget "MensaSHWatchWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD002A7D2F1A4F2D000FEC8D /* Debug */,
+				AD002A7E2F1A4F2D000FEC8D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		AD71E35C2D398FC700739792 /* Build configuration list for PBXNativeTarget "MensaSHWidgetExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1387,6 +1531,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		AD002A752F1A4F2D000FEC8D /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scinfu/SwiftSoup.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.7.6;
+			};
+		};
 		ADE1602A2CEA6BD600A9A177 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/scinfu/SwiftSoup.git";
@@ -1398,6 +1550,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		AD002A742F1A4F2D000FEC8D /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AD002A752F1A4F2D000FEC8D /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
+		};
 		AD0F1A9A2D4E5B2300FBB61D /* SwiftSoup */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = ADE1602A2CEA6BD600A9A177 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
