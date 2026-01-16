@@ -9,6 +9,10 @@ import WidgetKit
 import SwiftUI
 
 struct Provider: AppIntentTimelineProvider {
+    func recommendations() -> [AppIntentRecommendation<ConfigurationAppIntent>] {
+        []
+    }
+    
     func placeholder(in context: Context) -> SimpleEntry {
         SimpleEntry(date: Date(), menu: .examples.first!.value.current.first!, configuration: ConfigurationAppIntent())
     }
@@ -192,7 +196,9 @@ struct MensaSHWidget: Widget {
         .contentMarginsDisabled()
         .configurationDisplayName("Menu of the Day")
         .description("Display a canteen’s current or upcoming menu.")
+#if !os(watchOS)
         .supportedFamilies([.systemLarge, .systemMedium])
+#endif
     }
 }
 
@@ -212,6 +218,7 @@ extension ConfigurationAppIntent {
     }
 }
 
+#if !os(watchOS)
 #Preview(as: .systemLarge) {
     MensaSHWidget()
 } timeline: {
@@ -372,6 +379,7 @@ extension ConfigurationAppIntent {
     SimpleEntry(date: .now, menu: MenuOfTheDay.examples[.flensburg(.mensa)]!.current[3], configuration: .starEyes)
     SimpleEntry(date: .now, menu: MenuOfTheDay.examples[.flensburg(.mensa)]!.current[4], configuration: .starEyes)
 }
+#endif
 
 //[
 //    MenuOfTheDay(

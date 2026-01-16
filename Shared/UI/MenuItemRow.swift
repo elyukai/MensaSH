@@ -19,7 +19,11 @@ struct MenuItemRow: View {
                 LabeledContent(menuItem.description) {
                     Text(menuItem.hasDifferentPrices ? menuItem.prices.map { $0.formatted(.currency(code: "EUR")) }.joined(separator: " / ") : menuItem.prices[0].formatted(.currency(code: "EUR")))
                 }
+#if os(watchOS)
+                .labeledContentStyle(.vertical)
+#else
                 .lineLimit(2)
+#endif
             }
         }
     }
