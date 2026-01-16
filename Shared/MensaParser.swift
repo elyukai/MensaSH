@@ -69,7 +69,7 @@ actor MensaParser {
                 .filter { $0.tagName() == "span" }
                 .map { try Decimal(try $0.text(), format: .currency(code: "EUR")) }
             
-            let co2stars = Int(try menuElement.select(".co2star").first()?.attr("data-anz") ?? "")
+            let co2stars = Int(try menuElement.select(".co2blatt").first()?.attr("data-anz") ?? "")
             
             return MenuOfTheDay.Item(date: date, name: nameParts, allergens: allergens, additives: additives, types: types, prices: prices, co2stars: co2stars)
         }
